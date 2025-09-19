@@ -56,18 +56,42 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="hover-lift text-foreground "
+              <Link
+                href="https://github.com/kyaustad/Nerevar/releases"
+                target="_self"
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download Launcher
-              </Button>
-              <Button variant="outline" size="lg" className="hover-lift">
-                <Code className="mr-2 h-5 w-5" />
-                View API Docs
-              </Button>
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="hover-lift text-foreground "
+                  // onClick={() => {
+                  //   window.open(
+                  //     "https://github.com/kyaustad/Nerevar/releases",
+                  //     "_self"
+                  //   );
+                  // }}
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Nerevar
+                </Button>
+              </Link>
+
+              <Link
+                href="https://github.com/kyaustad/nerevar-api"
+                target="_self"
+              >
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="hover-lift"
+                  // onClick={() => {
+                  //   window.open("https://github.com/kyaustad/Nerevar", "_self");
+                  // }}
+                >
+                  <Code className="mr-2 h-5 w-5" />
+                  View API Docs
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -75,6 +99,22 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="py-20 bg-card/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-sovngarde-bold mb-4">
+              The Easiest Way to Play Tes3MP
+            </h2>
+            <div className="w-full h-full max-w-2xl mx-auto roudned-xl overflow-hidden">
+              <video
+                src="/nerevar-install.webm"
+                autoPlay
+                loop
+                muted
+                className="rounded-xl"
+              />
+            </div>
+          </div>
+        </div>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-sovngarde-bold mb-4">
@@ -133,7 +173,7 @@ export default function Home() {
                     <Database className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="font-sovngarde text-xl">
-                    Server Scripts
+                    {`Server Scripts - (Coming Soon)`}
                   </CardTitle>
                 </div>
               </CardHeader>
@@ -158,26 +198,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base">
-                  {`Take your servers mods and data files and package them into a mod pack for easy distribution and loading for other players`}
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            {/* API Access */}
-            <Card className="torn-paper hover-lift">
-              <CardHeader>
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Code className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="font-sovngarde text-xl">
-                    Developer API
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  {`RESTful API for developers to access any of the data that Nerevar has to offer`}
+                  {`Manage Wabbajack mod packs for your server or client with ease.`}
                 </CardDescription>
               </CardContent>
             </Card>
@@ -200,6 +221,25 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
             </Card>
+
+            {/* API Access */}
+            <Card className="torn-paper hover-lift">
+              <CardHeader>
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Code className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="font-sovngarde text-xl">
+                    Open Source
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  {`Nerevar and its API are 100% open source and free to use, with a GPLv3 License.`}
+                </CardDescription>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -207,8 +247,25 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 ">
-            <div className="text-center">
+          <div className="flex flex-col gap-4">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                {/* <h2 className="text-4xl md:text-5xl font-sovngarde-bold mb-4">
+              The Easiest Way to Play Tes3MP
+            </h2> */}
+                <div className="w-full h-full max-w-2xl mx-auto roudned-xl overflow-hidden">
+                  <video
+                    src="/nerevar-idle.webm"
+                    autoPlay
+                    loop
+                    muted
+                    className="rounded-xl"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* <div className="text-center">
               <div className="text-4xl md:text-5xl font-sovngarde text-primary mb-2">
                 {`10K+`}
               </div>
@@ -225,7 +282,7 @@ export default function Home() {
                 {`100+`}
               </div>
               <div className="text-muted-foreground">Users</div>
-            </div>
+            </div> */}
             {/* <div className="text-center">
               <div className="text-4xl md:text-5xl font-sovngarde text-primary mb-2">
                 {`99.9%`}
@@ -247,14 +304,28 @@ export default function Home() {
               {`The easiest way to setup, manage and share your Morrowind Multiplayer experience. Get the app now and start your journey today.`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="hover-lift">
-                <Download className="mr-2 h-5 w-5" />
-                Download Now
-              </Button>
-              <Button variant="outline" size="lg" className="hover-lift">
-                Learn More
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link
+                href="https://github.com/kyaustad/Nerevar/releases"
+                target="_self"
+              >
+                <Button size="lg" className="hover-lift">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Now
+                </Button>
+              </Link>
+              <Link href="https://github.com/kyaustad/Nerevar" target="_self">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="hover-lift"
+                  // onClick={() => {
+                  //   window.open("https://github.com/kyaustad/Nerevar", "_self");
+                  // }}
+                >
+                  Learn More
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -277,7 +348,7 @@ export default function Home() {
               <Badge variant="secondary" className="torn-paper">
                 Open Source
               </Badge>
-              <Badge variant="outline">MIT License</Badge>
+              <Badge variant="outline">GPLv3 License</Badge>
             </div>
           </div>
           <Separator className="my-8" />
