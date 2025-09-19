@@ -192,7 +192,7 @@ export default function Home() {
                     <Package className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="font-sovngarde text-xl">
-                    Mod Packs
+                    {`Mod Packs - (Coming Soon)`}
                   </CardTitle>
                 </div>
               </CardHeader>
